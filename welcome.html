@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SaiOrganix-landing page</title>
+    <link rel="stylesheet" href="/css/landing.css">
+</head>
+<body>
+    <!-- Background Overlay -->
+    <div class="background-overlay"></div>
+    
+    <!-- Main Container -->
+    <div class="container">
+        <div class="welcome-section">
+            <h1>Welcome to SaiOrganix</h1>
+            <p>Get fresh, fully organic vegetables and fruits, sourced with care for quality and a healthier lifestyle.</p>
+            <a href="#" class="explore-button">Explore</a>
+        </div>
+        <div class="login-section">
+            <h3>Sign In</h3>
+            <form onsubmit="handleSubmit(event)">
+                <div class="input-group">
+                    <input type="text" id="username" placeholder="Username" required>
+                </div>
+                <div class="input-group">
+                    <input type="password" placeholder="Password" required>
+                </div>
+                <button type="submit" class="login-button">Login</button>
+                <div class="remember-forgot">
+                    <label><input type="checkbox"> Remember me</label>
+                    <a href="#">Forgot Password?</a>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script>
+        function handleSubmit(event) {
+            event.preventDefault(); // Prevent the default form submission
+            const username = document.getElementById('username').value; // Get the username value
+            setTimeout(function() {
+                // Redirect to index.html with the username as a query parameter
+                window.location.href = "/index.html?username=" + encodeURIComponent(username); 
+            }, 2000); // Redirect after 2 seconds
+        }
+    </script>
+</body>
+</html>
