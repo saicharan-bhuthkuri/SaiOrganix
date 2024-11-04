@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SaiOrganix-landing page</title>
+    <title>SaiOrganix - Landing Page</title>
     <link rel="stylesheet" href="/css/landing.css">
 </head>
 <body>
@@ -34,14 +34,22 @@
             </form>
         </div>
     </div>
+
+    <!-- JavaScript -->
     <script>
         function handleSubmit(event) {
             event.preventDefault(); // Prevent the default form submission
             const username = document.getElementById('username').value; // Get the username value
-            setTimeout(function() {
-                // Redirect to index.html with the username as a query parameter
-                window.location.href = "/index.html?username=" + encodeURIComponent(username); 
-            }, 2000); // Redirect after 2 seconds
+            
+            if (username) {
+                console.log("Username captured:", username); // Debugging log
+                setTimeout(function() {
+                    // Redirect to index.html with the username as a query parameter
+                    window.location.href = "/index.html?username=" + encodeURIComponent(username); 
+                }, 2000); // Redirect after 2 seconds
+            } else {
+                console.log("Username is missing.");
+            }
         }
     </script>
 </body>

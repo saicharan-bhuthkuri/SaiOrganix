@@ -1,5 +1,4 @@
-/* styles.css */
-
+/* Base Styles for Responsiveness */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
 
 * {
@@ -14,7 +13,7 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-color: #f9f9f9; /* Base background color */
+    background-color: #f9f9f9;
     overflow: hidden;
     position: relative;
 }
@@ -154,25 +153,11 @@ body {
     color: #00b894;
 }
 
-@media (max-width: 768px) {
-    .container {
-        flex-direction: column;
-        width: 90%;
-    }
-
-    .welcome-section, .login-section {
-        width: 100%;
-        text-align: center;
-    }
-
-    .welcome-section h1, .login-section h3 {
-        font-size: 32px;
-    }
-}
-/* Responsive Styles */
+/* Responsive Styles for Various Devices */
 @media (max-width: 1024px) {
     .container {
         width: 90%;
+        padding: 50px;
     }
     .welcome-section h1 {
         font-size: 36px;
@@ -195,19 +180,25 @@ body {
         flex-direction: column;
         padding: 40px;
     }
+    .welcome-section, .login-section {
+        width: 100%;
+        text-align: center;
+        padding: 20px;
+    }
     .welcome-section h1, .login-section h3 {
-        font-size: 30px;
+        font-size: 28px;
     }
     .welcome-section p {
         font-size: 16px;
+        line-height: 1.5;
     }
     .explore-button, .login-button {
         padding: 10px 20px;
-        font-size: 14px;
+        font-size: 15px;
     }
     .input-group input {
         padding: 10px;
-        font-size: 14px;
+        font-size: 15px;
     }
 }
 
@@ -217,7 +208,7 @@ body {
         padding: 20px;
     }
     .welcome-section h1 {
-        font-size: 26px;
+        font-size: 24px;
     }
     .welcome-section p, .login-section h3 {
         font-size: 14px;
