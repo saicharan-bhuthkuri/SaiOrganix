@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SaiOrganix - Register</title>
+    <link rel="stylesheet" href="/css/register.css">
+    <style>
+        /* Modal Styles for cart */
+        .modal {
+            display: none; 
+            position: fixed; 
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%; 
+            height: 100%; 
+            overflow: auto; 
+            background-color: rgb(0,0,0); 
+            background-color: rgba(0,0,0,0.4); 
+            padding-top: 60px;
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 5% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%; 
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .modal-header {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .modal-body {
+            font-size: 1rem;
+            color: #666;
+        }
+
+        .modal-footer {
+            text-align: right;
+        }
+
+        .modal-button {
+            padding: 10px 15px;
+            background-color: #00b894;
+            border: none;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .modal-button:hover {
+            background-color: #00e676;
+        }
+    </style>
+</head>
+<body>
+    <!-- Background Overlay -->
+    <div class="background-overlay"></div>
+
+    <!-- Main Container -->
+    <div class="container">
+        <div class="welcome-section">
+            <h1>Welcome to SaiOrganix</h1>
+            <p>Discover the true taste of freshness with premium organic produce, delivered straight to your door. Join us today and embrace a healthier lifestyle.</p>
+            <a href="/login.html" class="explore-button">Already have an account? Sign In</a>
+        </div>
+
+        <div class="registration-section">
+            <h3>Create Your Account</h3>
+            <form onsubmit="handleRegister(event)">
+                <div class="input-group">
+                    <input type="text" id="fullname" placeholder="Full Name" required>
+                </div>
+                <div class="input-group">
+                    <input type="text" id="username" placeholder="Username" required>
+                </div>
+                <div class="input-group">
+                    <input type="email" id="email" placeholder="Email Address" required>
+                </div>
+                <div class="input-group">
+                    <input type="password" id="password" placeholder="Password" required>
+                </div>
+                <div class="input-group">
+                    <input type="password" id="confirm-password" placeholder="Confirm Password" required>
+                    <small class="error-message" id="password-error"></small>
+                </div>
+                <button type="submit" class="register-button">Register</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div id="successModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <div class="modal-header">Registration Successful!</div>
+            <div class="modal-body">
+                <p>Thank you for joining SaiOrganix! You can now access fresh organic produce delivered directly to your door.</p>
+            </div>
+            <div class="modal-footer">
+                <button class="modal-button" onclick="redirectToLogin()">Go to Login</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        function handleRegister(event) {
+            event.preventDefault(); // Prevent the default form submission
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirm-password').value;
+            const errorElement = document.getElementById('password-error');
+
+            if (password !== confirmPassword) {
+                errorElement.textContent = "Passwords do not match.";
+            } else {
+                errorElement.textContent = ""; // Clear any previous error
+                openModal(); // Open the success modal
+            }
+        }
+
+        function openModal() {
+            document.getElementById("successModal").style.display = "block";
+            setTimeout(redirectToLogin, 4000); // Redirect after 2 seconds
+        }
+
+        function closeModal() {
+            document.getElementById("successModal").style.display = "none";
+        }
+
+        function redirectToLogin() {
+            window.location.href = "/login.html"; // Redirect to login page
+        }
+
+        // Close the modal when the user clicks outside of the modal content
+        window.onclick = function(event) {
+            const modal = document.getElementById("successModal");
+            if (event.target === modal) {
+                closeModal();
+            }
+        }
+    </script>
+</body>
+</html>

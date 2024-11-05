@@ -1,0 +1,222 @@
+/* Base Styles */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f9f9f9;
+    overflow: hidden;
+    position: relative;
+}
+
+.background-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 20% 20%, rgba(0, 230, 118, 0.15), transparent),
+                radial-gradient(circle at 80% 80%, rgba(0, 184, 148, 0.15), transparent);
+    z-index: -1;
+}
+
+.container {
+    display: flex;
+    width: 90%;
+    max-width: 800px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.container:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+}
+
+.welcome-section, .registration-section {
+    width: 50%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Enhanced Welcome Heading */
+.welcome-section h1 {
+    font-size: 2.5rem; /* Increased size for prominence */
+    font-weight: 800;
+    margin-bottom: 20px;
+    background: linear-gradient(135deg, #00b894, #00e676);
+    -webkit-background-clip: text;
+    color: transparent;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    line-height: 1.2;
+}
+
+.welcome-section p {
+    font-size: 1rem; /* Increased size for readability */
+    line-height: 1.6;
+    color: #555; /* Softer color for readability */
+    margin-bottom: 25px;
+    text-align: NONE;
+    padding: 0 15px;
+}
+
+
+.explore-button {
+    padding: 10px 20px;
+    background: linear-gradient(135deg, #00b894, #00e676);
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 230, 118, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.explore-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 230, 118, 0.4);
+}
+
+.registration-section h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #333;
+    text-align: center;
+}
+
+.registration-section h3::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: #00e676;
+    margin: 8px auto 0;
+    border-radius: 2px;
+}
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    color: #333;
+    background-color: #fafafa;
+    outline: none;
+    box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.05);
+    transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.input-group input:focus {
+    box-shadow: 0 0 6px rgba(0, 230, 118, 0.3);
+    border-color: #00e676;
+}
+
+.error-message {
+    color: #d9534f;
+    font-size: 0.85rem;
+    margin-top: 4px;
+}
+
+.register-button {
+    width: 100%;
+    padding: 12px;
+    background: #00b894;
+    border: none;
+    color: #fff;
+    font-size: 0.9rem;
+    font-weight: 700;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 3px 10px rgba(0, 230, 118, 0.3);
+}
+
+.register-button:hover {
+    background: #00e676;
+    box-shadow: 0 5px 12px rgba(0, 230, 118, 0.4);
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+    .container {
+        width: 90%;
+        padding: 25px;
+    }
+    .welcome-section h1 {
+        font-size: 2rem;
+    }
+    .welcome-section p, .registration-section h3 {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        width: 90%;
+        padding: 20px;
+    }
+    .welcome-section, .registration-section {
+        width: 100%;
+        text-align: center;
+        padding: 15px;
+    }
+    .welcome-section h1 {
+        font-size: 1.75rem;
+    }
+    .welcome-section p {
+        font-size: 0.9rem;
+    }
+    .explore-button, .register-button {
+        padding: 8px 16px;
+        font-size: 0.9rem;
+    }
+    .input-group input {
+        padding: 10px;
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        width: 95%;
+        padding: 15px;
+    }
+    .welcome-section h1 {
+        font-size: 1.5rem;
+    }
+    .welcome-section p, .registration-section h3 {
+        font-size: 0.9rem;
+    }
+    .explore-button, .register-button {
+        padding: 8px 14px;
+        font-size: 0.85rem;
+    }
+    .input-group input {
+        padding: 8px;
+        font-size: 0.8rem;
+    }
+}
