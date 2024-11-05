@@ -77,7 +77,7 @@ body {
     text-align: center; /* Center align for better appearance */
 }
 
-.explore-button {
+.register-button {
     padding: 10px 20px;
     background: linear-gradient(135deg, #00b894, #00e676);
     color: #fff;
@@ -89,7 +89,7 @@ body {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.explore-button:hover {
+.register-button:hover {
     transform: translateY(-2px);
     box-shadow: 0 6px 15px rgba(0, 230, 118, 0.4);
 }
@@ -190,7 +190,7 @@ body {
     .welcome-section p {
         font-size: 0.9rem;
     }
-    .explore-button, .register-button {
+    .register-button, .register-button {
         padding: 8px 16px;
         font-size: 0.9rem;
     }
@@ -211,7 +211,7 @@ body {
     .welcome-section p, .registration-section h3 {
         font-size: 0.9rem;
     }
-    .explore-button, .register-button {
+    .register-button, .register-button {
         padding: 8px 14px;
         font-size: 0.85rem;
     }
