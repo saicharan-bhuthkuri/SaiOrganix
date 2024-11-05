@@ -52,6 +52,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    text-align: center; /* Center text in both sections */
 }
 
 .welcome-section h1 {
@@ -91,6 +92,16 @@ body {
     font-weight: 600;
     margin-bottom: 25px;
     color: #333;
+    position: relative; /* Required for positioning the line */
+}
+
+.login-section h3::after {
+    content: '';
+    display: block;
+    width: 60px; /* Set a specific width for the line */
+    height: 2px; /* Thickness of the line */
+    background-color: #00e676; /* Color of the line */
+    margin: 8px auto 0; /* Center the line horizontally */
 }
 
 .input-group {
@@ -182,7 +193,7 @@ body {
     }
     .welcome-section, .login-section {
         width: 100%;
-        text-align: center;
+        text-align: center; /* Center text in both sections */
         padding: 20px;
     }
     .welcome-section h1, .login-section h3 {
