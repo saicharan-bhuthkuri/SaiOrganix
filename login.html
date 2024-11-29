@@ -43,6 +43,7 @@
             
             if (username) {
                 console.log("Username captured:", username); // Debugging log
+                localStorage.setItem("username", username);
                 setTimeout(function() {
                     // Redirect to index.html with the username as a query parameter
                     window.location.href = "/index.html?username=" + encodeURIComponent(username); 
