@@ -50,7 +50,7 @@ SaiOrganix is an e-commerce platform designed for organic products. This reposit
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/saicharan-bhuthkuri/fruit-sale-site.git
+git clone https://github.com/SaiVortex/SaiOrganix.git
 ```
 
 2. Open index.html in a browser to start exploring the website.
